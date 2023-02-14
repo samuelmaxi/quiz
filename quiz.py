@@ -54,7 +54,7 @@ def questionario(questao, lista_perguntas):
     # Retorna a função respostas
     return respostas
 
-perguntas = [
+lista_de_perguntas = [
     {
         'Pergunta' : 'Quanto é 2+2?',
         'Opções' : ['1','3','4','5','6'],
@@ -72,17 +72,17 @@ perguntas = [
     },
 ]
 
-numero_questao = 1
-i=0
-for pergunta in perguntas:
+numero_questao = 1 # Verificador de questão
+i=0 # Indice das questões
+for pergunta in lista_de_perguntas:
     
-    print(f'{numero_questao}.Pergunta',perguntas[i]['Pergunta'])
-    print('Opções:', perguntas[i]['Opções'])
+    print(f'{numero_questao}.Pergunta',lista_de_perguntas[i]['Pergunta'])
+    print('Opções:', lista_de_perguntas[i]['Opções'])
     numero_questao += 1
     i += 1
     
 questao = int(input('Digite qual das questões você quer responder: '))
-seleciona_questao = questionario(questao, perguntas)
+seleciona_questao = questionario(questao, lista_de_perguntas)
 resposta_usuario = int(input('Resposta: '))
 
 seleciona_questao(resposta_usuario)
